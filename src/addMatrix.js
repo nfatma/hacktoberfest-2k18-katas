@@ -1,5 +1,7 @@
 export const addMatrix = (A, B) => {
   // TO IMPLEMENT IN ANOTHER PR
+  var result = [];
+  var i;
     if(A instanceof Array == false || B instanceof Array == false)
       {
         throw('Please pass Array as parameters');
@@ -10,14 +12,13 @@ export const addMatrix = (A, B) => {
       }
       else
       {
-        if(A[0] instanceof Array)
+        if(A[0] instanceof Array || A[A.length - 1] instanceof Array)
         {
-            var result = [];
             for(var k = 0; k < A.length; k++)
             {
                 result.push([]);
             }
-            for(var i = 0; i < A.length; i++)
+            for(i = 0; i < A.length; i++)
             {
                 if(A[i] instanceof Array == false || B[i] instanceof Array == false)
                 {
@@ -33,8 +34,7 @@ export const addMatrix = (A, B) => {
             }
         }
         else{
-            var result = [];
-            for(var i = 0; i < A.length; i++)
+            for(i = 0; i < A.length; i++)
             {
                 result[i] = A[i] + B[i];
             }
